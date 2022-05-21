@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/robertocannella/Node/issues"
   },
-  "homepage": "https://github.com/robertocannella/Node#readme"
+  "homepage": "https://github.com/robertocannella/Node#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
