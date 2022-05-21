@@ -1,5 +1,16 @@
 import { createServer } from 'http';
 
-createServer((req, res) => {
 
-});  
+
+const server = createServer((req, res) => { // Anonymous RequestListener
+    // Event loop
+    console.log(req)
+
+
+    //
+    // Exit the Event Loop
+    //
+    //process.exit();
+});
+
+server.listen(3001);
