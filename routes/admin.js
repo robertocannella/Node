@@ -1,12 +1,14 @@
 import express from "express";
-
+import { URL } from 'url';
 export const router = express.Router();
+
 
 // GET 
 router.get('/add-product', (req, res, next) => {
-    console.log("add product middleware");
+    console.log("GET add product middleware");
     // -- send response:
-    res.send('<h1>The Add Product Page.</h1><form action="add-product" method="POST"><input type="text" name="title"><button type="submit">submit</button></form>')
+    const customPath = new URL('../views/add-product.html', import.meta.url).pathname;
+    res.sendFile(customPath)
 })
 
 // POST
