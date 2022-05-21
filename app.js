@@ -26,7 +26,7 @@ const server = createServer((req, res) => { // Anonymous RequestListener
             const parsedBody = Buffer.concat(body).toString();
             const message = parsedBody.split('=')[1];
             console.log(parsedBody)
-            fs.writeFileSync("message.txt", message, err => {
+            fs.writeFile("message.txt", message, err => {
                 // Wait until file is written to send response
                 res.statusCode = 302;
                 res.setHeader('Location', '/');
