@@ -13,7 +13,7 @@ import { router as shopRoutes } from './routes/shop.js';
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
-
+app.use(express.static(new URL('public', import.meta.url).pathname))
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
