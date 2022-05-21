@@ -22,18 +22,18 @@ const server = createServer((req, res) => { // Anonymous RequestListener
             console.log(chunck)
             body.push(chunck)
         })
-        req.on('end', () => {
+        return req.on('end', () => {
             const parsedBody = Buffer.concat(body).toString();
             const message = parsedBody.split('=')[1];
             console.log(parsedBody)
-            fs.writeFileSync("message.txt", message)
+            fs.writeFileSync("message.txt", message, err => {
+                // Wait until file is written to send response
+                res.statusCode = 302;
+                res.setHeader('Location', '/');
+                return res.end();
+            })
         })
-        res.statusCode = 302;
-        res.setHeader('Location', '/');
-        return res.end();
     }
-
-
     res.setHeader('content-type', 'text/html');
     res.write('<html>')
     res.write('<head><title>Response HTML</title></head>')
