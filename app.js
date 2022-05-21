@@ -4,7 +4,9 @@ import { createServer } from 'http';
 
 const server = createServer((req, res) => { // Anonymous RequestListener
     // Event loop
-    console.log(req)
+
+    console.log(req.url, req.method)
+    console.log(req.headers)
 
 
     //
