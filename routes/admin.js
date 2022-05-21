@@ -5,7 +5,6 @@ export const router = express.Router();
 
 // GET 
 router.get('/add-product', (req, res, next) => {
-    console.log("GET add product middleware");
     // -- send response:
     const customPath = new URL('../views/add-product.html', import.meta.url).pathname;
     res.sendFile(customPath)
@@ -13,7 +12,7 @@ router.get('/add-product', (req, res, next) => {
 
 // POST
 router.post('/add-product', (req, res, next) => {
+    // -- Redirect
     console.log(req.body)
     res.redirect('/');
-    console.log("add product middleware");
 })

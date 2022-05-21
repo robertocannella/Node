@@ -20,7 +20,7 @@ app.use(shopRoutes);
 
 app.use((req, res, next) => {
     const customPath = new URL('views/404.html', import.meta.url).pathname;
-    res.sendFile(customPath)
+    res.status(404).sendFile(customPath)
 })
 
 app.listen(3001, () => {
