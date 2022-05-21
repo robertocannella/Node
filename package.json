@@ -1,0 +1,19 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "node setup",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertocannella/Node.git"
+  },
+  "author": "roberto cannella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertocannella/Node/issues"
+  },
+  "homepage": "https://github.com/robertocannella/Node#readme"
+}
