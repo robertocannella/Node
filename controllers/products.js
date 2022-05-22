@@ -1,4 +1,3 @@
-import express from "express";
 export const products = []
 // GET 
 export const getAddProductPage = (req, res, next) => {

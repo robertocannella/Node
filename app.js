@@ -8,6 +8,8 @@ import bodyParser from 'body-parser';
 // Custom Imports
 import { router as adminRoutes } from './routes/admin.js';
 import { router as shopRoutes } from './routes/shop.js';
+import { getError404 } from './controllers/errors.js'
+
 
 
 const app = express();
@@ -22,12 +24,7 @@ app.use(express.static(new URL('public', import.meta.url).pathname))
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
-app.use((req, res, next) => {
-    res.render('404', {
-        docTitle: '404 Not Found',
-        activePath: null
-    })
-})
+app.use(getError404)
 
 app.listen(3001, () => {
     console.log("Listening on port 3001...")
