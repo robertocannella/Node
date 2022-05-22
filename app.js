@@ -3,6 +3,8 @@ import { URL } from 'url';
 // 3rd Party Librares
 import express from 'express';
 import bodyParser from 'body-parser';
+import { engine } from 'express-handlebars';
+
 
 // Custom Imports
 import { router as adminRoutes, products } from './routes/admin.js';
@@ -10,8 +12,18 @@ import { router as shopRoutes } from './routes/shop.js';
 
 
 const app = express();
-app.set('view engine', 'pug')
 
+// HandBars Setup
+app.engine('handlebars', engine({           // Only require with custom configurations below
+    layoutsDir: 'views/layouts/',           // This is default
+    defaultLayout: 'main',                  // This is default
+    extname: 'handlebars'                   // This is default
+
+}));
+app.set('view engine', 'handlebars')
+
+
+// Public accessible folder
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(new URL('public', import.meta.url).pathname))
 
