@@ -1,4 +1,5 @@
-export const products = []
+import { Product } from "../models/product.js";
+
 // GET 
 export const getAddProductPage = (req, res, next) => {
     // -- send response:
@@ -11,13 +12,15 @@ export const getAddProductPage = (req, res, next) => {
 
 export const postAddProductPage = (req, res, next) => {
     // add data to products arrays
-    products.push({ title: req.body.title });
     // -- Redirect
+    const product = new Product(req.body.title);
+    product.save();
     res.redirect('/');
 }
 
 export const getProductsPage = (req, res, next) => {
     // -- send response:
+    const products = Product.fetchAll()
     res.render('shop',
         {
             prods: products,                        // Products array to iterate
