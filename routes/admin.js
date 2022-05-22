@@ -9,7 +9,7 @@ export const products = [];
 // GET 
 router.get('/add-product', (req, res, next) => {
     // -- send response:
-    res.render('add-products')
+    res.render('add-products', { docTitle: 'Add Products', activePath: '/admin/add-product' })
 })
 
 // POST

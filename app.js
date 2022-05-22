@@ -19,8 +19,7 @@ app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
-    const customPath = new URL('views/404.html', import.meta.url).pathname;
-    res.status(404).sendFile(customPath)
+    res.render('404', { docTitle: '404 Not Found' })
 })
 
 app.listen(3001, () => {
