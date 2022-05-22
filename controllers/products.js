@@ -20,11 +20,13 @@ export const postAddProductPage = (req, res, next) => {
 
 export const getProductsPage = (req, res, next) => {
     // -- send response:
-    const products = Product.fetchAll()
-    res.render('shop',
-        {
-            prods: products,                        // Products array to iterate
-            docTitle: "Shop!",                      // The page title
-            activePath: '/',                        // Used to set active class in ejs main
-        })
+    Product.fetchAll((products) => {
+        res.render('shop',
+            {
+                prods: products,                        // Products array to iterate
+                docTitle: "Shop!",                      // The page title
+                activePath: '/',                        // Used to set active class in ejs main
+            })
+    })
+
 }
