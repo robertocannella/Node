@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 
 
 // Custom Imports
-import { router as adminRoutes, products } from './routes/admin.js';
+import { router as adminRoutes } from './routes/admin.js';
 import { router as shopRoutes } from './routes/shop.js';
 
 
