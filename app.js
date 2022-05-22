@@ -23,7 +23,10 @@ app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
-    res.render('404', { docTitle: '404 Not Found' })
+    res.render('404', {
+        docTitle: '404 Not Found',
+        activePath: null
+    })
 })
 
 app.listen(3001, () => {

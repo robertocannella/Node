@@ -11,9 +11,6 @@ router.get('/', (req, res, next) => {
         {
             prods: products,                        // Products array to iterate
             docTitle: "Shop!",                      // The page title
-            hasProducts: products.length > 0,       // Used by pug/handlebars
-            activePath: '/',                        // Used to set active class in pug main
-            activeShop: true,                        // Used to set active class in handlebars main
-            productCSS: true                         // Set css links in handlebars main       
+            activePath: '/',                        // Used to set active class in ejs main
         })
 })

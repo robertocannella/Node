@@ -12,9 +12,7 @@ router.get('/add-product', (req, res, next) => {
     res.render('add-product',
         {
             docTitle: 'Add Product',                // The page title
-            activePath: '/admin/add-product',       // Used to set active class in pug and ejs main
-            activeProduct: true,                    // Used to set active class in handlebars main
-            productCSS: true, formsCSS: true         // Set css links in handlebars main           
+            activePath: '/admin/add-product',       // Used to set active class in ejs main        
         })
 })
 
