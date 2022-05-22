@@ -9,11 +9,11 @@
             <main>
                 <% if (prods.length> 0) { %>
                     <div class="grid">
-                        <% for (let product in prods) {%>
+                        <% for (let product of prods) {%>
                             <article class="card product-item">
                                 <header class="card__header">
                                     <h1 class="product__title">
-
+                                        <%= product.title %>
                                     </h1>
                                 </header>
                                 <div class="card__image">
@@ -37,4 +37,4 @@
                         <h1>No Products Found.</h1>
                         <% } %>
             </main>
-            <%- include('includeds/end.ejs') %>
+            <%- include('includes/end.ejs') %>
