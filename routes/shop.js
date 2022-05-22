@@ -1,6 +1,12 @@
 import express from "express";
-import { getProductsPage } from "../controllers/products.js";
+import { getProductsPage, getIndex, getCart, getCheckout } from "../controllers/shop.js";
 
 export const router = express.Router();
 
-router.get('/', getProductsPage)
+router.get('/', getIndex);
+
+router.get('/products', getProductsPage);
+
+router.get('/cart', getCart)
+
+router.get('/checkout', getCheckout)
