@@ -17,7 +17,7 @@ export const getAdminProducts = (req, res, next) => {
         res.render('admin/products',
             {
                 prods: products,
-                docTitle: 'Admin Products',                // The page title
+                docTitle: 'Admin Products',          // The page title
                 activePath: '/admin/products',       // Used to set active class in ejs main        
             })
     });
