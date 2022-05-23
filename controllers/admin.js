@@ -27,7 +27,8 @@ export const getAdminProducts = (req, res, next) => {
 export const postAddProductPage = (req, res, next) => {
     // add data to products arrays
     // -- Redirect
-    const product = new Product(req.body.title);
+
+    const product = new Product(req.body.title, req.body.imageUrl, req.body.description, req.body.price);
     product.save();
     res.redirect('/');
 }
