@@ -1,14 +1,18 @@
 import express from "express";
-import { getProductsPage, getIndex, getCart, getCheckout, getOrders } from "../controllers/shop.js";
+import * as shop from "../controllers/shop.js";
 
 export const router = express.Router();
 
-router.get('/', getIndex);
+router.get('/', shop.getIndex);
 
-router.get('/products', getProductsPage);
+router.get('/products', shop.getProductsPage);
 
-router.get('/cart', getCart)
+router.get('/products/:productId', shop.getProductById);
 
-router.get('/checkout', getCheckout)
+router.get('/cart', shop.getCart)
 
-router.get('/orders', getOrders)
+router.post('/cart', shop.postCart)
+
+router.get('/checkout', shop.getCheckout)
+
+router.get('/orders', shop.getOrders)
